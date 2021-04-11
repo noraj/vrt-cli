@@ -1,0 +1,4 @@
+--output-dir docs/
+-
+--main README.md
+LICENSE

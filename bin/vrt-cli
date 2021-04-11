@@ -1,0 +1,44 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Ruby internal
+require 'pp'
+# Project internal
+require 'vrt_cli'
+# External
+require 'docopt'
+
+doc = <<~DOCOPT
+  vrt-cli by noraj
+
+  Usage:
+    vrt-cli tree [--no-color --debug]
+    vrt-cli table [--sortby <col> --order <dir>] [--no-color --debug]
+    vrt-cli -h | --help
+    vrt-cli --version
+
+  Table options: can be used with list and search commands
+    -s <col>, --sortby <col>  Column to sort by: priority, category, subcategory, variant [default: nil]
+    -o <dir>, --order <dir>   Displayed in ascendant (asc) order or descendant order (dsc) [default: asc]
+
+  Other options:
+    --no-color  Disable colorized output
+    --debug     Display arguments
+    -h, --help  Show this screen
+    --version   Show version
+DOCOPT
+
+begin
+  args = Docopt.docopt(doc, version: VrtCli::VERSION)
+  Paint.mode = 0 if args['--no-color']
+  pp args if args['--debug']
+  vc = VrtCli::App.new
+  if args['tree']
+    vc.display_tree
+  elsif args['table']
+    vc.sort(args['--sortby'].to_sym, args['--order'].to_sym)
+    vc.display_table
+  end
+rescue Docopt::Exit => e
+  puts e.message
+end
