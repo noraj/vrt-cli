@@ -10,3 +10,9 @@ AllCops:
 Layout/HashAlignment:
   Exclude:
     - '*.gemspec'
+Metrics/AbcSize:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
