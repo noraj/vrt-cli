@@ -5,7 +5,7 @@ require 'vrt'
 module VrtCli
   # The application
   class App
-    # @return [Array<Hash>] An array of vulnerabilities (+:priority+, +:category+, +:subcategory+, +:variant+)
+    # @return [Array<Hash>] An array of vulnerabilities (`:priority`, `:category`, `:subcategory`, `:variant`)
     def parse
       vulns = []
       VRT.get_map.structure.each do |_cat_id, category|

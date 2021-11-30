@@ -34,8 +34,8 @@ module VrtCli
     end
 
     # Sort vulnerabilities
-    # @param sortby [Symbol] Column to sort by (+:priority+, +:category+, +:subcategory+, +:variant+)
-    # @param order [Symbol] Displayed in ascendant (+:asc+) order or descendant order (+:dsc+). Works with +sortby+.
+    # @param sortby [Symbol] Column to sort by (`:priority`, `:category`, `:subcategory`, `:variant`)
+    # @param order [Symbol] Displayed in ascendant (`:asc`) order or descendant order (`:dsc`). Works with `sortby`.
     def sort(sortby = :priority, order = :asc)
       unless sortby.nil? || sortby == :nil
         @vulnerabilities.sort! { |a, b| a[sortby].to_s <=> b[sortby].to_s }
@@ -45,10 +45,11 @@ module VrtCli
     end
 
     # Display vulnerabilities in a simple justified table
-    # First column: Technical severity / Priority (+:priority+)
-    # Second column: Category (+:category+)
-    # Third column: Sub-category / Specific vulnerability (+:subcategory+)
-    # Fourth column: Vulnerability / Variant / Affected function (+:variant+)
+    #
+    # - First column: Technical severity / Priority (`:priority`)
+    # - Second column: Category (`:category`)
+    # - Third column: Sub-category / Specific vulnerability (`:subcategory`)
+    # - Fourth column: Vulnerability / Variant / Affected function (`:variant`)
     def display_table
       @vulnerabilities.each do |v|
         output = "#{Paint[v[:priority].to_s, SEVERITY[v[:priority]]]} #{Paint[v[:category].ljust(44), :bold]} "
