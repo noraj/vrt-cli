@@ -37,9 +37,7 @@ GEM
     ruby-progressbar (1.13.0)
     unicode-display_width (2.4.2)
     vrt (0.11.0)
-    webrick (1.7.0)
-    yard (0.9.28)
-      webrick (~> 1.7.0)
+    yard (0.9.32)
 
 PLATFORMS
   ruby
