@@ -37,7 +37,7 @@ GEM
     ruby-progressbar (1.13.0)
     unicode-display_width (2.4.2)
     vrt (0.11.0)
-    yard (0.9.33)
+    yard (0.9.34)
 
 PLATFORMS
   ruby
