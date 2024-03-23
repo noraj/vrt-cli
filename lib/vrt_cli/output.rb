@@ -8,9 +8,9 @@ module VrtCli
   class App
     # Display vulnerabilities in a tree
     def display_tree
-      VRT.get_map.structure.each do |_cat_id, category|
+      VRT.get_map.structure.each_value do |category|
         puts Paint[category.name, :bold]
-        category.children.each do |_subcat_id, subcategory|
+        category.children.each_value do |subcategory|
           if subcategory.priority
             print ''.ljust(4) + Paint[subcategory.priority, SEVERITY[subcategory.priority]]
             puts " #{subcategory.name}"
@@ -20,7 +20,7 @@ module VrtCli
 
           next unless subcategory.children?
 
-          subcategory.children.each do |_variant_id, variant|
+          subcategory.children.each_value do |variant|
             if variant.priority
               print ''.ljust(8) + Paint[variant.priority, SEVERITY[variant.priority]]
               puts " #{variant.name}"

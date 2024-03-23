@@ -8,10 +8,10 @@ module VrtCli
     # @return [Array<Hash>] An array of vulnerabilities (`:priority`, `:category`, `:subcategory`, `:variant`)
     def parse
       vulns = []
-      VRT.get_map.structure.each do |_cat_id, category|
-        category.children.each do |_subcat_id, subcategory|
+      VRT.get_map.structure.each_value do |category|
+        category.children.each_value do |subcategory|
           if subcategory.children?
-            subcategory.children.each do |_variant_id, variant|
+            subcategory.children.each_value do |variant|
               priority = variant.priority || '?'
               vuln = {
                 priority: priority,
