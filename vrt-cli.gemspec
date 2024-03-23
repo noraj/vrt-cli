@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     'documentation_uri'     => 'https://noraj.github.io/vrt-cli/',
     'homepage_uri'          => 'https://noraj.github.io/vrt-cli/',
     'source_code_uri'       => 'https://github.com/noraj/vrt-cli/',
+    'funding_uri'           => 'https://github.com/sponsors/noraj',
     'rubygems_mfa_required' => 'true'
   }
 
