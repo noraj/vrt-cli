@@ -7,11 +7,11 @@ gemspec
 group :runtime, :cli do
   gem 'docopt', '~> 0.6' # for argument parsing
   gem 'paint', '~> 2.3' # for colorized ouput
-  gem 'vrt', '~> 0.11'
+  gem 'vrt', '~> 0.13'
 end
 
 group :development, :install do
-  gem 'bundler', '~> 2.1'
+  gem 'bundler', '~> 2.6'
 end
 
 group :development, :test do
@@ -20,10 +20,12 @@ group :development, :test do
 end
 
 group :development, :lint do
-  gem 'rubocop', '~> 1.50'
+  gem 'rubocop', '~> 1.70'
 end
 
 group :development, :docs do
-  gem 'commonmarker', '~> 0.23' # for markdown support in YARD
-  gem 'yard', ['>= 0.9.27', '< 0.10']
+  gem 'commonmarker', '~> 2.0' # for markdown support in YARD
+  # gem 'yard', ['>= 0.9.27', '< 0.10']
+  # https://github.com/lsegal/yard/issues/1528
+  gem 'yard', github: 'ParadoxV5/yard', ref: '9e869c940859570b07b81c5eadd6070e76f6291e', branch: 'commonmarker-1.0'
 end

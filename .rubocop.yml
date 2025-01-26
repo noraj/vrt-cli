@@ -2,7 +2,7 @@ inherit_mode:
   merge:
     - Exclude
 AllCops:
-  TargetRubyVersion: 3.0
+  TargetRubyVersion: 3.1
   NewCops: enable
   Exclude:
     - 'test/*.rb'
@@ -15,4 +15,6 @@ Metrics/AbcSize:
 Metrics/MethodLength:
   Enabled: false
 Metrics/PerceivedComplexity:
+  Enabled: false
+Gemspec/AddRuntimeDependency: # style
   Enabled: false
