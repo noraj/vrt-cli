@@ -7,9 +7,6 @@ require 'vrt_cli/version'
 
 # VRT CLI module
 module VrtCli
-  # Constants
-  include Version
-
   # The application
   class App
     SEVERITY = {

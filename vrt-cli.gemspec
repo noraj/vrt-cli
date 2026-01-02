@@ -4,7 +4,7 @@ require_relative 'lib/vrt_cli/version'
 
 Gem::Specification.new do |s|
   s.name          = 'vrt-cli'
-  s.version       = Version::VERSION
+  s.version       = VrtCli::VERSION
   s.platform      = Gem::Platform::RUBY
   s.summary       = 'A simple tool to visualize VRT (Vulnerability Rating Taxonomy) from the CLI.'
   s.description   = 'A simple tool to visualize VRT (Vulnerability Rating Taxonomy) from the CLI.'
