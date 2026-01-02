@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.summary       = 'A simple tool to visualize VRT (Vulnerability Rating Taxonomy) from the CLI.'
   s.description   = 'A simple tool to visualize VRT (Vulnerability Rating Taxonomy) from the CLI.'
   s.authors       = ['Alexandre ZANNI']
-  s.email         = 'alexandre.zanni@engineer.com'
+  s.email         = 'alexandre.zanni@europe.com'
   s.homepage      = 'https://noraj.github.io/vrt-cli/'
   s.license       = 'MIT'
 
