@@ -30,7 +30,7 @@ module VrtCli
           end
         end
       end
-      true
+      nil
     end
 
     # Sort vulnerabilities
@@ -41,7 +41,7 @@ module VrtCli
         @vulnerabilities.sort! { |a, b| a[sortby].to_s <=> b[sortby].to_s }
         @vulnerabilities.reverse! if order == :dsc
       end
-      true
+      nil
     end
 
     # Display vulnerabilities in a simple justified table
@@ -56,7 +56,7 @@ module VrtCli
         output += "#{v[:subcategory].ljust(55)} #{v[:variant]}"
         puts output
       end
-      true
+      nil
     end
   end
 end

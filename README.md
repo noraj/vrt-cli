@@ -21,7 +21,7 @@ A simple tool to visualize [VRT][vrt-bc] (Vulnerability Rating Taxonomy) from th
 
 ## Install
 
-```
+```bash
 gem install vrt-cli
 ```
 
